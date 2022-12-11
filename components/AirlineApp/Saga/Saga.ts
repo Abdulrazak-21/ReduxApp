@@ -1,15 +1,16 @@
 import axios from "axios"
-import { call, put, takeEvery } from "redux-saga/effects"
+import { call, put, takeEvery, takeLatest } from "redux-saga/effects"
 
 export function* getdata(action): any {
 
     //  yield put({ type: "Loading" })
+    //setter
     try {
 
         //console.log(" saga")
-        const res: any = yield call(axios.get, "https://jsonplaceholder.typicode.com/posts");
+        const res: any = yield call(axios.get, "https://api.instantwebtools.net/v1/airlines");
         //console.log(res.data, " saga")
-        yield put({ type: "Fetch_success", payload: res.data })
+        yield put({ type: "Fetch_AirlineData", payload: res.data })
 
     } catch (error) {
         yield put({ type: "Error" })
@@ -18,7 +19,8 @@ export function* getdata(action): any {
 
 }
 
-
+//getter
 export function* rootSaga() {
-    yield takeEvery("Get_Products", getdata)
+    yield takeEvery("Get_Airlines", getdata)
 }
+

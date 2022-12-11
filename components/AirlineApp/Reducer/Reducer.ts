@@ -16,7 +16,7 @@ export const reducer = (state = init, action: any) => {
             }
         }
 
-        case "Fetch_success": {
+        case "Fetch_AirlineData": {
             return {
                 loading: false,
                 data: action.payload,
