@@ -27,13 +27,13 @@ function* getMuesumdata1(action): any {
         console.log('called getMuesumdata1')
 
         //console.log(" saga")
-        const res: any = yield call(axios.get, "https://jsonplaceholder.typicode.com/posts");
+        const res: any = yield call(axios.get, "https://collectionapi.metmuseum.org/public/collection/v1/objects?metadatadate=2021-06-22&&departmentids=3&hasimages=true");
         //console.log(res.data, " saga")
-        yield put({ type: "Fetch_MuesumData1", payload: res.data.slice(0, 10) })
+        yield put({ type: "Fetch_MuesumData1", payload: res.data })
 
     } catch (error) {
         yield put({ type: "Error" })
-        console.log(" error")
+        console.log(error)
     }
 
 }
