@@ -5,17 +5,18 @@ import { useSelector, useDispatch } from "react-redux"
 const MuesumHomeScreen = ({ navigation }) => {
     const dispatch = useDispatch();
     const Muesumvalue = useSelector(state => state);
-    if (Muesumvalue.muesumdata1 !== undefined) {
-        //const muesumdata = value
-        console.log(Muesumvalue.muesumdata1.objectIDs.slice(0, 10), "Muesum Data Fetched")
-    }
+    //if (Muesumvalue.muesumdata1 !== undefined) {
+    //const muesumdata = value
+    const list = Muesumvalue?.muesumdata1?.objectIDs?.slice(0, 10)
+    console.log(list, "Muesum Data Fetched")
+    //}
     const [search, setsearch] = useState("");
 
     useEffect(() => {
         dispatch({ type: "Get_Muesum1" })
     }, [])
 
-    if (Muesumvalue.muesumloading1) {
+    if (Muesumvalue.loading) {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <ActivityIndicator size="large" color="#00ff00" />
@@ -24,8 +25,8 @@ const MuesumHomeScreen = ({ navigation }) => {
         )
     }
 
-    if (Muesumvalue.muesumerror) {
-        console.log(Muesumvalue.muesumerror)
+    if (Muesumvalue.error) {
+        console.log(Muesumvalue.error)
     }
 
     const renderItem = ({ item }) => {
@@ -38,12 +39,14 @@ const MuesumHomeScreen = ({ navigation }) => {
         )
     }
 
+    //if (Muesumvalue.muesumdata1.objectIDs !== undefined) {
+
     return (
         <View>
             <Text style={{ fontSize: 20, padding: 10, }}>Museum Screen</Text>
             <View style={{ height: '90%', borderWidth: 2, margin: 10, flexDirection: 'column' }} >
                 <FlatList
-                    data={Muesumvalue.muesumdata1.objectIDs.slice(0, 10)}
+                    data={list}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
@@ -55,6 +58,7 @@ const MuesumHomeScreen = ({ navigation }) => {
             </View>
         </View>
     )
+    //}
 
 
 }

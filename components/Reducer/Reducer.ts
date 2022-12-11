@@ -4,10 +4,6 @@ const init = {
     error: " ",
     muesumdata1:[],
     muesumdata2:[],
-    muesumerror:" ",
-    muesumloading1: true,
-    muesumloading2:true,
-    
 }
 
 export const reducer = (state = init, action: any) => {
@@ -31,16 +27,16 @@ export const reducer = (state = init, action: any) => {
         }
         case "Fetch_MuesumData1": {
             return {
-                muesumloading1: false,
+                loading: false,
                 muesumdata1: action.payload,
-                muesumerror: " "
+                error: " "
             }
         }
         case "Fetch_MuesumData2": {
             return {
-                muesumloading2: false,
+                loading: false,
                 muesumdata2: action.payload,
-                muesumerror: " "
+                error: " "
             }
         }
         case "Error": {
