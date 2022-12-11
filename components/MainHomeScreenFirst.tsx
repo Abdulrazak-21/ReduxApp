@@ -6,7 +6,12 @@ const MainHomeScreenFirst = ({ navigation }) => {
         <View>
             <View style={styles.ButtonWrapper}>
                 <TouchableOpacity onPress={() => navigation.navigate('AirlineHomeScreen')} >
-                    <Text style={{ textAlign: 'center', fontWeight: '600', color: '#fff', }}>Go to EarthQuake Screen</Text>
+                    <Text style={{ textAlign: 'center', fontWeight: '600', color: '#fff', }}>Go to Airline Screen</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.ButtonWrapper}>
+                <TouchableOpacity onPress={() => navigation.navigate('MuesumHomeScreen')} >
+                    <Text style={{ textAlign: 'center', fontWeight: '600', color: '#fff', }}>Go to Muesum Screen</Text>
                 </TouchableOpacity>
             </View>
         </View>

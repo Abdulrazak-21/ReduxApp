@@ -1,7 +1,13 @@
 const init = {
     loading: true,
     data: [],
-    error: " "
+    error: " ",
+    muesumdata1:[],
+    muesumdata2:[],
+    muesumerror:" ",
+    muesumloading1: false,
+    muesumloading2:false,
+    
 }
 
 export const reducer = (state = init, action: any) => {
@@ -23,7 +29,20 @@ export const reducer = (state = init, action: any) => {
                 error: " "
             }
         }
-
+        case "Fetch_MuesumData1": {
+            return {
+                muesumloading1: false,
+                muesumdata1: action.payload,
+                muesumerror: " "
+            }
+        }
+        case "Fetch_MuesumData2": {
+            return {
+                muesumloading2: false,
+                muesumdata2: action.payload,
+                muesumerror: " "
+            }
+        }
         case "Error": {
             return {
                 loading: false,
@@ -31,5 +50,7 @@ export const reducer = (state = init, action: any) => {
                 error: "Something went wrong"
             }
         }
+        default:
+            return state;
     }
 }

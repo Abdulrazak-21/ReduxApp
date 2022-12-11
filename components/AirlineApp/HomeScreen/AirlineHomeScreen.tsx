@@ -30,8 +30,8 @@ const AirlineHomeScreen = () => {
     // const list = value.data
 
     if (value != undefined) {
-        const arr = value.data.slice(0, 20)
-        var data_filtered = arr.filter(item => item.country == search)
+        const arr = value.data
+        var data_filtered = arr.filter(item => item.country == (search))
 
 
         //console.log(data_filtered, 'data_filtered')
