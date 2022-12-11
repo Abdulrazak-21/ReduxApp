@@ -5,8 +5,8 @@ const init = {
     muesumdata1:[],
     muesumdata2:[],
     muesumerror:" ",
-    muesumloading1: false,
-    muesumloading2:false,
+    muesumloading1: true,
+    muesumloading2:true,
     
 }
 
