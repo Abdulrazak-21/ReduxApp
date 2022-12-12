@@ -7,8 +7,10 @@ const MuesumHomeScreen = ({ navigation }) => {
     const Muesumvalue = useSelector(state => state);
     //if (Muesumvalue.muesumdata1 !== undefined) {
     //const muesumdata = value
-    const list = Muesumvalue?.muesumdata1?.objectIDs?.slice(0, 10)
-    console.log(list, "Muesum Data Fetched")
+    const list = Muesumvalue?.muesumdata1?.objectIDs.slice(0, 10)
+    console.log(list, 'This is list muesum data')
+    //const list = Muesumvalue?.muesumdata1?.objectIDs?.slice(0, 10)
+    //console.log(list, "Muesum Data Fetched")
     //}
     const [search, setsearch] = useState("");
 
@@ -46,7 +48,7 @@ const MuesumHomeScreen = ({ navigation }) => {
             <Text style={{ fontSize: 20, padding: 10, }}>Museum Screen</Text>
             <View style={{ height: '90%', borderWidth: 2, margin: 10, flexDirection: 'column' }} >
                 <FlatList
-                    data={list}
+                    data={Muesumvalue?.muesumdata1?.objectIDs?.slice(0, 10)}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />

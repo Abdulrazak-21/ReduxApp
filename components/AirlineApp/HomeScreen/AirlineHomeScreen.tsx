@@ -29,22 +29,26 @@ const AirlineHomeScreen = () => {
 
     // const list = value.data
 
-    if (value != undefined) {
-        const arr = value.data
-        var data_filtered = arr.filter(item => item.country == (search))
+    // if (value != undefined) {
+    //     const arr = value.data
+    //     var data_filtered = arr.filter(item => item.country == (search))
 
 
-        //console.log(data_filtered, 'data_filtered')
-    }
+    //     //console.log(data_filtered, 'data_filtered')
+    // }
 
     const renderItem = ({ item }) => {
-        return (
-            <View style={{ borderWidth: 1, borderRadius: 10, margin: 3, padding: 10, flexDirection: "row", alignContent: "center", width: '98%', justifyContent: "space-evenly" }}>
-                <Image style={{ height: 100, width: 100, borderWidth: 10, borderRadius: 10, resizeMode: "center" }} source={{ uri: item.logo }} />
-                <Text style={{ alignItems: 'center' }}>{item.name}</Text>
-                <Text style={{ alignItems: 'center' }}>{item.country}</Text>
-            </View>
-        )
+        if (item.country !== undefined) {
+            if (item.country.includes(search)) {
+                return (
+                    <View style={{ borderWidth: 1, borderRadius: 10, margin: 3, padding: 10, flexDirection: "row", alignContent: "center", width: '98%', justifyContent: "space-evenly" }}>
+                        <Image style={{ height: 100, width: 100, borderWidth: 10, borderRadius: 10, resizeMode: "center" }} source={{ uri: item.logo }} />
+                        <Text style={{ alignItems: 'center' }}>{item.name}</Text>
+                        <Text style={{ alignItems: 'center' }}>{item.country}</Text>
+                    </View>
+                )
+            }
+        }
     }
 
 
@@ -58,7 +62,7 @@ const AirlineHomeScreen = () => {
                 />
 
                 <FlatList
-                    data={data_filtered}
+                    data={value.data?.slice(0, 100)}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
