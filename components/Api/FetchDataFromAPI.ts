@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const airline = 'https://api.instantwebtools.net/v1/airlines';
-const meusum1 = 'https://collectionapi.metmuseum.org/public/collection/v1/objects?metadatadate=2021-06-22&&departmentids=3&hasimages=true';
+const earthquake = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=2021-06-14&endtime=2021-07-14'
 const link = 'https://jsonplaceholder.typicode.com/posts'
 
 
@@ -14,13 +14,12 @@ export const getAirlines = async () => {
     }
 };
 
-export const getMuesum1 = async () => {
-    console.log('calling Muesum api')
+export const getEarthQuake = async () => {
     try {
-        const users = await axios.get(meusum1);
-        //console.log(users.data, 'sdsads')
+        const users = await axios.get(earthquake);
         return users;
     } catch (err) {
         return console.error(err);
     }
 };
+

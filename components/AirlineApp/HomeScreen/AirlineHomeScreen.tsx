@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux"
 
 const AirlineHomeScreen = () => {
 
-    // let userid = 7;
 
     const dispatch = useDispatch();
     const value = useSelector(state => state);
@@ -15,7 +14,6 @@ const AirlineHomeScreen = () => {
         dispatch({ type: "Get_Airlines" })
     }, [])
 
-    //console.log(value, "list")
 
     // if (value.Loading) {
     //     // Alert.alert(value.error, "Retry")
@@ -27,7 +25,6 @@ const AirlineHomeScreen = () => {
     // }
 
 
-    // const list = value.data
 
     // if (value != undefined) {
     //     const arr = value.data
@@ -39,7 +36,7 @@ const AirlineHomeScreen = () => {
 
     const renderItem = ({ item }) => {
         if (item.country !== undefined) {
-            if (item.country.includes(search)) {
+            if (item.country.toLowerCase().includes(search.toLowerCase())) {
                 return (
                     <View style={{ borderWidth: 1, borderRadius: 10, margin: 3, padding: 10, flexDirection: "row", alignContent: "center", width: '98%', justifyContent: "space-evenly" }}>
                         <Image style={{ height: 100, width: 100, borderWidth: 10, borderRadius: 10, resizeMode: "center" }} source={{ uri: item.logo }} />
@@ -58,6 +55,7 @@ const AirlineHomeScreen = () => {
                 <TextInput
                     style={{ borderWidth: 1, marginBottom: 10 }}
                     placeholder="Enter country name"
+                    placeholderTextColor='#000'
                     onChangeText={val => setsearch(val)}
                 />
 

@@ -2,8 +2,7 @@ const init = {
     loading: true,
     data: [],
     error: " ",
-    muesumdata1:[],
-    muesumdata2:[],
+    earthquakedata: [],
 }
 
 export const reducer = (state = init, action: any) => {
@@ -25,10 +24,10 @@ export const reducer = (state = init, action: any) => {
                 error: " "
             }
         }
-        case "Fetch_MuesumData1": {
+        case "Fetch_EarthQuakeData": {
             return {
                 loading: false,
-                muesumdata1: action.payload,
+                earthquakedata: action.payload,
                 error: " "
             }
         }

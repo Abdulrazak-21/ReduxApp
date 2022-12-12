@@ -7,8 +7,8 @@ const MuesumHomeScreen = ({ navigation }) => {
     const Muesumvalue = useSelector(state => state);
     //if (Muesumvalue.muesumdata1 !== undefined) {
     //const muesumdata = value
-    const list = Muesumvalue?.muesumdata1?.objectIDs.slice(0, 10)
-    console.log(list, 'This is list muesum data')
+    //const list = Muesumvalue?.muesumdata1?.objectIDs.slice(0, 10)
+    //console.log(list, 'This is list muesum data')
     //const list = Muesumvalue?.muesumdata1?.objectIDs?.slice(0, 10)
     //console.log(list, "Muesum Data Fetched")
     //}
