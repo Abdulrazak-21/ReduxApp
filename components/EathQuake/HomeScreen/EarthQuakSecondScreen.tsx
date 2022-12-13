@@ -17,4 +17,3 @@ const EarthQuakSecondScreen = ({ route }) => {
 
 export default EarthQuakSecondScreen
 
-const styles = StyleSheet.create({})

@@ -6,9 +6,7 @@ function* getAirlinedata(action): any {
 
     try {
 
-        //console.log(" saga")
         const res: any = yield call(getAirlines);
-        //console.log(res.data, " saga")
         yield put({ type: "Fetch_AirlineData", payload: res.data.slice(0, 500) })
 
     } catch (error) {
@@ -26,7 +24,6 @@ function* getEarthQuakedata(action): any {
 
     try {
 
-        //console.log(" saga")
         console.log('calling earthquake data')
         const res: any = yield call(getEarthQuake);
         console.log(res.data, " EarthQuake Data")

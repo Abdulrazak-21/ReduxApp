@@ -15,24 +15,6 @@ const AirlineHomeScreen = () => {
     }, [])
 
 
-    // if (value.Loading) {
-    //     // Alert.alert(value.error, "Retry")
-    //     console.log("loading")
-    // }
-
-    // if (value.error !== " ") {
-    //     Alert.alert(value.error, "Retry")
-    // }
-
-
-
-    // if (value != undefined) {
-    //     const arr = value.data
-    //     var data_filtered = arr.filter(item => item.country == (search))
-
-
-    //     //console.log(data_filtered, 'data_filtered')
-    // }
 
     const renderItem = ({ item }) => {
         if (item.country !== undefined) {

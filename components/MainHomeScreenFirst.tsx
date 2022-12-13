@@ -10,11 +10,6 @@ const MainHomeScreenFirst = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.ButtonWrapper}>
-                <TouchableOpacity onPress={() => navigation.navigate('MuesumHomeScreen')} >
-                    <Text style={{ textAlign: 'center', fontWeight: '600', color: '#fff', }}>Go to Muesum Screen</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.ButtonWrapper}>
                 <TouchableOpacity onPress={() => navigation.navigate('EarthQuakeHomeScreen')} >
                     <Text style={{ textAlign: 'center', fontWeight: '600', color: '#fff', }}>Go to EarthQuake Screen</Text>
                 </TouchableOpacity>

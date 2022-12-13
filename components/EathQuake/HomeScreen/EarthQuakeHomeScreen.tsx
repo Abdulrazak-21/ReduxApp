@@ -9,6 +9,7 @@ const EarthQuakeHomeScreen = ({ navigation }) => {
     useEffect(() => {
         dispatch({ type: "Get_EarthQuake" })
     }, [])
+    console.log(value.loading)
     if (value.loading) {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -41,9 +42,6 @@ const EarthQuakeHomeScreen = ({ navigation }) => {
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
-                {/* <Text>{state.post.type}</Text>
-                <Text>{state.post.metadata.title}</Text>
-                <Text>{state.post.features[0].properties.mag}</Text> */}
             </View>
         </View>
     )
